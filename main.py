@@ -16,6 +16,13 @@ def is_name():
         print(f'Hi, {name}')
     else:
         print('Okay, I will not name you, stranger')
+    return name
+
+
+def prediction(name, predictions: list):
+    print(f'So, ask your questions {name}:')
+    ask = input()
+    return random.choice(predictions)
 
 
 answers = ["Бесспорно", "Мне кажется - да", "Пока неясно, попробуй снова", "Даже не думай",
@@ -26,4 +33,12 @@ answers = ["Бесспорно", "Мне кажется - да", "Пока не�
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('Hi, I am magic predictioner, and I know the answer to any of your questions.')
-    is_name()
+    user_name = is_name()
+    again = ''
+    while again != 'no':
+        print(prediction(user_name, answers))
+        again = input('Ask anything else? Press "Enter" to continue or print "no" end: ')
+    else:
+        print()
+        print('Come again, if you have any questions.')
+        print('See you latter...')
